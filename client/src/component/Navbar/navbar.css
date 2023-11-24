@@ -1,0 +1,153 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    color: #101F3C;
+    z-index: 100;
+    /* padding: 3px; */
+    position: sticky;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+  }
+  
+  .navbar-brand img {
+    width: 20px; 
+    /* height: 2em;  */
+  }
+
+  .navbar-menu {
+    display: flex;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 18px;
+    align-items: center;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+  }
+
+  .navbar-menu1 {
+    display: flex;
+    display: inline-flex; 
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 16px;
+    align-items: center;
+    /* padding-right: 10%; */
+    /* opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s; */
+  }
+  
+  .navbar-menu1 a {
+    color: #101F3C;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-color: #FA510F;
+    display: inline-block; 
+    margin-right: 2px;
+  }
+
+  .navbar-menu1 button {
+    color: #101F3C;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-color: #FA510F;
+    display: inline-block; 
+    margin-left: 50px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+
+  .navbar-menu1 a:hover,
+  .navbar-menu1 button:hover {
+    background-color: #f5b49a;
+  }
+
+  .navbar-menu a,
+  .navbar-menu button {
+    color: #101F3C;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-color: #FA510F;
+    display: inline-block; 
+    margin-right: 50px;
+  }
+
+  .navbar-menu button {
+    font-weight: 700;
+    font-size: 15px;
+  }
+  
+  .navbar-menu a:hover,
+  .navbar-menu button:hover {
+    background-color: #f5b49a;
+  }
+
+  .navbar-menu a:active,
+  .navbar-menu a:focus,
+  .navbar-menu button:active,
+  .navbar-menu button:focus {
+    color: #ef4705;
+  }
+  
+  .navbar-menu1 h1 {
+    margin: 0; 
+    padding: 10px 10px;
+    font-size: 20px;
+  }
+  
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+  0% {
+      transform: translateY(100px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0px);
+      opacity: 1;
+  }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px); 
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

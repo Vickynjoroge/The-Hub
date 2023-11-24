@@ -1,0 +1,112 @@
+/* Styling for the comments section */
+.comments-section {
+    margin-top: 5px;
+    border-top: 1px solid #101F3C;
+    padding-top: 16px;
+  }
+  
+  .comment-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f3f3f3;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+  }
+
+  .comment-heading {
+    margin-left: 10%;
+  }
+
+  
+  .comment-content {
+    flex-grow: 1;
+    margin-left: 10px;
+  }
+  
+  .comment-top {
+    margin: 0;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+
+  .comment-top h1 {
+    font-size: 13px;
+  } 
+
+  .comment-top span{
+    margin-left: 80%;
+  }
+  
+  .comment-content p {
+    margin: 0px 0;
+    font-size: 15px;
+    color: #101F3C;
+  }
+  
+  .delete-comment {
+    color: #FA510F;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-right: 5px;
+    font-size: 1.2rem;
+  }
+  
+  .delete-comment:hover {
+    transform: scale(1.1);
+  }
+
+  /* Styling for the Comment component */
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .comment-form-heading {
+    font-size: 13px;
+  }
+  
+  .comment-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .comment-buttons {
+    display: flex;
+  }
+  
+  .comment-button {
+    padding: 4px 10px;
+    /* margin-right: 8px; */
+    border: none;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #101F3C;
+    color: white;
+    font-size: 10px;
+  }
+  
+  .comment-button.cancel {
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  
+  .comment-error {
+    color: red;
+    margin-top: 8px;
+  }
+  
+  

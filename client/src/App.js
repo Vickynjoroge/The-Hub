@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './component/Login/Login';
 import SignUp from './component/Login/Signup';
 import Navbar from './component/Navbar/Navbar'
+// import Scroll from './component/Posts/Scroll';
+import Post from './component/Posts/Posts';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -26,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      {/* <Navbar user={user} setUser={setUser} /> */}
+      <Navbar user={user} setUser={setUser} />
       <Routes>
         {!user && (
           <>
@@ -36,8 +38,8 @@ function App() {
         )}
 
         {user && (
-          <>
-           <Navbar user={user} setUser={setUser} />
+          <>           
+            <Route path="/posts" element={<Post setUser={setUser} />} />
           </>
         )}
         </Routes>

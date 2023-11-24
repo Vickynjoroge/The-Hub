@@ -18,7 +18,7 @@ function NavBar({ user, setUser }) {
 
   const handleSignupClick = () => {
     // Navigate to the "/signup" route
-    navigate('/login');
+    navigate('/');
   };
   return (
     <header>
@@ -31,13 +31,11 @@ function NavBar({ user, setUser }) {
         <div>
           {user ? (
             <div className="navbar-menu1">
-              <h1>Welcome, {user.username}!</h1>
+              <h1>Welcome, {user.name}!</h1>
               <button onClick={handleLogoutClick}>Logout</button>
             </div>
           ) : (
             <div className="navbar-menu">
-              <Link to="/our_hub">Our Hub</Link>
-              <Link to="/events">Events</Link>
               <button className="btn btn-outline-secondary" onClick={handleSignupClick}>JOIN OUR NETWORK</button>
             </div>
           )}

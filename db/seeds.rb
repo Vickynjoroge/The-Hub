@@ -3,24 +3,51 @@ puts "seeding data 🌱"
 
 # Clear existing data
 # Assuming you have a User model with authentication logic
+Post.destroy_all
 User.destroy_all
 
-# Create sample users with updated data
-User.create!(
-  name: 'Bret',
-  email: 'john@example.com',
-  password: '92988-3874',
-  zipcode: '12345',
-  premium: true
-)
 
-User.create!(
-  name: 'Jane Doe',
-  email: 'jane@example.com',
-  password: 'password',
-  zipcode: '67890',
-  premium: false
-)
+# Create users
+users = []
+5.times do
+  users << User.create!(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: 'password',
+    premium: [true, false].sample,
+    zipcode: Faker::Address.zip_code
+  )
+end
+
+
+
+
+
+# Create posts
+categories = %w[Category1 Category2 Category3]
+descriptions = Faker::Lorem.paragraphs
+image_urls = [Faker::Internet.url, Faker::Internet.url, Faker::Internet.url]
+
+10.times do
+  Post.create!(
+    category: categories.sample,
+    description: descriptions.sample,
+    image_url: image_urls.sample,
+    user: users.sample
+  )
+end
+
+
+puts "Creating Comments"
+
+# Seed data for the "comments" table
+5.times do
+  Comment.create!(
+    comment: Faker::Lorem.sentence,
+    user: users.sample,
+    post: Post.all.sample
+  )
+end
 
 # Add more users as needed
 puts "done seeding data 💯"

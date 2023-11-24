@@ -16,7 +16,7 @@ const Login = ( {setUser} ) => {
     setIsLoading(true);
 
     async function login(){
-      const response = await fetch(`/login`, {
+      const response = await fetch(`/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, password }),
@@ -26,7 +26,7 @@ const Login = ( {setUser} ) => {
         setIsLoading(false);
         const user = await response.json();
         setUser(user);
-        navigate('/')
+        navigate('/posts')
       } else {
         const err = await response.json();
         setErrors(err.message || "Invalid Username or Password");
@@ -35,11 +35,6 @@ const Login = ( {setUser} ) => {
     login();
   };
 
-
-//    const handleSignUp = (e) => {
-//     e.preventDefault();
-//     navigate("/signup");
-//   };
 
   return (
     <div className="login-page">
